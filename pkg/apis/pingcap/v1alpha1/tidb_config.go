@@ -157,6 +157,9 @@ type TiDBConfig struct {
 	// Labels are labels for TiDB server
 	// +optional
 	Labels map[string]string `toml:"labels,omitempty" json:"labels,omitempty"`
+	// GracefulWaitBeforeShutdown sets how long tidb should wait on shutdown before it closes its socket
+	// +optional
+	GracefulWaitBeforeShutdown *uint64 `toml:"graceful-wait-before-shutdown,omitempty" json:"graceful-wait-before-shutdown,omitempty"`
 }
 
 // Log is the log section of config.
